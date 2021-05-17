@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Assertions;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 public class LibraryTests {
   private static final Book TEST_BOOK =
@@ -67,7 +66,7 @@ public class LibraryTests {
   }
 
   @Test
-  public void testUpdateNotFound() throws LibraryException {
+  public void testUpdateNotFound() {
     final Book newBook =
         new Book(
             "updating for dummies",
@@ -108,7 +107,7 @@ public class LibraryTests {
   }
 
   @Test
-  public void testRemoveBookWithIdNotFound() throws LibraryException {
+  public void testRemoveBookWithIdNotFound() {
     final Book book =
         new Book("bbb", "Smith", "Sarah", Optional.empty(), Optional.empty(), Optional.empty());
     LibraryException ex =
@@ -125,7 +124,7 @@ public class LibraryTests {
   }
 
   @Test
-  public void testRemoveBookWithTitleAndNamesNotFound() throws LibraryException {
+  public void testRemoveBookWithTitleAndNamesNotFound() {
     final Book book =
         new Book("bbb", "Smith", "Sarah", Optional.empty(), Optional.empty(), Optional.empty());
     LibraryException ex =
